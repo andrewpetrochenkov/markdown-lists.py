@@ -13,7 +13,7 @@ def render(lists, depth=1):
     items = []
     for l in lists:
         if isinstance(l, (list, set, tuple)):
-            string = render(l, depth + 1)
+            string = render(l, depth)
             items.append(indent(depth, string))
         else:
             items.append("+   %s" % str(l))
